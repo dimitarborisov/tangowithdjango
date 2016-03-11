@@ -1,9 +1,11 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Rango</title>
     </head>
 
+{% block body_block %}
     <body>
         <h1>Top 5 pages:</h1>
         {% if pages_top %}
@@ -44,4 +46,5 @@
             <a href="/rango/about/">About</a><br/>
             <a href="/rango/add_category/">Add a New Category</a><br />
     </body>
+{% endblock %}
 </html>

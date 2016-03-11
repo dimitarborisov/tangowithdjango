@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+    </head>
+
+    <body>
+        <h1>About</h1>
+        {% if user.is_authenticated %}
+             {% if visits %}
+                <h3>Visists: {{visits}}</h3>
+            {% else %}
+                No entries, sorry :(
+            {% endif %}
+        
+        {% endif %}
+    </body>
+</html>

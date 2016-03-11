@@ -221,7 +221,15 @@ def register(request):
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
 
 def about(request):
-    return HttpResponse("Rango says here is the about page. <br/> <a href='/rango/'>Index</a>")
+    #If the visits session varible exists, take it and use it.
+    # If it doesn't, we haven't visited the site so set the count to zero.
+    if request.session.get('visits'):
+        count = request.session.get('visits')
+    else:
+        count = 0
+
+    # remember to include the visit data
+    return render(request, 'rango/about.html', {'visits': count})
 
 def category(request, category_name_slug):
 
